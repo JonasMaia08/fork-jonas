@@ -13,7 +13,6 @@ const StudentAbsences: React.FC<StudentAbsencesProps> = ({
 }) => {
   return (
     <div className="flex flex-col ">
-      <h2 className="text-sm font-semibold text-gray-700">FALTAS DO ALUNO</h2>
       <div className="text-orange-500 text-lg font-bold mt-2">{subject}</div>
       <div className="flex items-baseline mt-1">
         <span className="text-4xl font-bold text-black">{absences}</span>

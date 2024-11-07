@@ -16,8 +16,7 @@ const ProfessorAbsence: React.FC<ProfessorAbsenceProps> = ({ userType }) => {
   };
 
   return (
-    <div className="p-4 rounded-lg bg-gray-100 shadow-md">
-      <h2 className="text-lg font-semibold mb-2">AUSÊNCIA DE PROFESSOR</h2>
+    <div className="">
       {userType === 'atleta' ? (
         <select
           multiple
