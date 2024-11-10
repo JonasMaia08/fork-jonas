@@ -1,10 +1,10 @@
 import React from "react";
-import AgendaSemanal from "./AgendaSemanal";
-import StudentAbsences from "./StudentAbsences";
-import ProfessorAbsence from "./ProfessorAbsence";
-import CalendarioCompromissos from "./CalendarioCompromissos";
+import AgendaSemanal from "../components/ui/AgendaSemanal";
+import StudentAbsences from "../components/ui/StudentAbsences";
+import ProfessorAbsence from "../components/ui/ProfessorAbsence";
+import CalendarioCompromissos from "../components/ui/CalendarioCompromissos";
 
-const Home: React.FC = () => {
+const HomeAtleta: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center pb-16">
       {/* Cabeçalho: visível apenas em telas md ou maiores */}
@@ -87,4 +87,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomeAtleta;
