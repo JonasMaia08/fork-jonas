@@ -6,6 +6,8 @@ import ProfileSelect from '../pages/ProfileSelect';
 import LoginAtleta from "../pages/LoginAtleta";
 import LoginGestor from "../pages/LoginGestor";
 import LoginProfessor from "../pages/LoginProfessor";
+import Chamada from "../pages/Chamada"
+import HomeAtleta from '../pages/HomeAtleta';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,16 @@ const router = createBrowserRouter([
         index: true,
         element: <LoginGestor/>,
       },
+      {
+        path: "/chamada",
+        index: true,
+        element: <Chamada/>,
+      },
+      {
+        path: "/home-atleta",
+        index: true,
+        element: <HomeAtleta/>,
+      }
     ],
   },
 ]);
