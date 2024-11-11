@@ -6,9 +6,14 @@ import ProfileSelect from '../pages/ProfileSelect';
 import LoginAtleta from "../pages/LoginAtleta";
 import LoginGestor from "../pages/LoginGestor";
 import LoginProfessor from "../pages/LoginProfessor";
+<<<<<<< HEAD
 import HomeAtleta from "../pages/HomeAtleta";
 import FaltasAtleta from "../pages/FaltasAtleta";
 import Chamada from "../pages/Chamada";
+=======
+import Chamada from "../pages/Chamada"
+import HomeAtleta from '../pages/HomeAtleta';
+>>>>>>> 1c381a5 (fix: add rotas das novas features)
 
 const router = createBrowserRouter([
   {
@@ -42,6 +47,7 @@ const router = createBrowserRouter([
         element: <LoginGestor/>,
       },
       {
+<<<<<<< HEAD
         path: '/home-atleta',
         index: true,
         element: <HomeAtleta/>,
@@ -56,6 +62,17 @@ const router = createBrowserRouter([
         index: true,
         element: <Chamada/>,
       },
+=======
+        path: "/chamada",
+        index: true,
+        element: <Chamada/>,
+      },
+      {
+        path: "/home-atleta",
+        index: true,
+        element: <HomeAtleta/>,
+      }
+>>>>>>> 1c381a5 (fix: add rotas das novas features)
     ],
   },
 ]);
