@@ -27,13 +27,13 @@ const initialStudents: Student[] = [
   {
     id: 3,
     name: "Alessandre Cardoso dos Reis",
-    status: "PRESENTE",
+    status: "AUSENTE",
     absences: 4,
   },
   {
     id: 4,
     name: "Alessandri Cardoso dos Reis",
-    status: "PRESENTE",
+    status: "AUSENTE",
     absences: 4,
   },
 ];
