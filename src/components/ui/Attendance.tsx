@@ -21,19 +21,19 @@ const initialStudents: Student[] = [
   {
     id: 2,
     name: "Alessandro Cardoso dos Reis",
-    status: "AUSENTE",
+    status: "PRESENTE",
     absences: 4,
   },
   {
     id: 3,
-    name: "Alessandre Cardoso dos Reis",
-    status: "AUSENTE",
+    name: "João Cardoso dos Reis",
+    status: "PRESENTE",
     absences: 4,
   },
   {
     id: 4,
-    name: "Alessandri Cardoso dos Reis",
-    status: "AUSENTE",
+    name: "Marcos Cardoso dos Reis",
+    status: "PRESENTE",
     absences: 4,
   },
 ];
