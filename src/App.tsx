@@ -1,12 +1,11 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import HomeAtleta from './pages/HomeAtleta'
+import Chamada from './pages/Chamada';
 
 function App() {
   return (
-    <div className="App">
-     <main>
-      <Outlet/>
-     </main>
+    <div className="">
+      <Chamada />
     </div>
   );
 }
