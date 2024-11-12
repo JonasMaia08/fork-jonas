@@ -21,24 +21,24 @@ const initialStudents: Student[] = [
   {
     id: 2,
     name: "Alessandro Cardoso dos Reis",
-    status: "AUSENTE",
+    status: "PRESENTE",
     absences: 4,
   },
   {
     id: 3,
     name: "Alessandre Cardoso dos Reis",
-    status: "AUSENTE",
+    status: "PRESENTE",
     absences: 4,
   },
   {
     id: 4,
     name: "Alessandri Cardoso dos Reis",
-    status: "AUSENTE",
+    status: "PRESENTE",
     absences: 4,
   },
 ];
 
-const Attendance: React.FC<AttendanceProps> = ({ userType }) => {
+const ChamadaComp: React.FC<AttendanceProps> = ({ userType }) => {
   const [students, setStudents] = useState<Student[]>(initialStudents);
   const [selectedDate, setSelectedDate] = useState<string>("");
 
@@ -147,4 +147,4 @@ const Attendance: React.FC<AttendanceProps> = ({ userType }) => {
   );
 };
 
-export default Attendance;
+export default ChamadaComp;
