@@ -23,13 +23,12 @@ const HomeAtleta: React.FC = () => {
         </div>
       </header>
 
-      {/* Conteúdo Principal */}
       <main className="max-w-7xl mx-auto mt-8 p-4">
         <h2 className="text-2xl font-bold mb-4 text-left">
           Olá, <span className="text-orange-600">Atleta!</span>
         </h2>
 
-        {/* Layout principal usando grid */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="col-span-2 bg-gray-200 p-4 rounded-lg shadow-md">
             <h3 className="font-semibold mb-2">HORÁRIO SEMANAL</h3>

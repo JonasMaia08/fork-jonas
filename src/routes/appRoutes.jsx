@@ -3,9 +3,9 @@ import App from '../App';
 import Home from '../pages/Home';
 import ErrorPage from '../pages/ErrorPage';
 import ProfileSelect from '../pages/ProfileSelect';
-import LoginAtleta from "../pages/LoginAtleta";
-import LoginGestor from "../pages/LoginGestor";
-import LoginProfessor from "../pages/LoginProfessor";
+import {LoginAtleta} from "../pages/LoginAtleta";
+import {LoginGestor} from "../pages/LoginGestor";
+import {LoginProfessor} from "../pages/LoginProfessor";
 import Chamada from "../pages/Chamada"
 import HomeAtleta from '../pages/HomeAtleta';
 
