@@ -1,13 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import Home from '../pages/Home';
-import ErrorPage from '../pages/ErrorPage';
-import ProfileSelect from '../pages/ProfileSelect';
-import LoginAtleta from "../pages/LoginAtleta";
-import LoginGestor from "../pages/LoginGestor";
-import LoginProfessor from "../pages/LoginProfessor";
-import Chamada from "../pages/Chamada"
-import HomeAtleta from '../pages/HomeAtleta';
+import { CadastroAtleta, Chamada, ErrorPage, Home, HomeAtleta, LoginAtleta, LoginGestor, LoginProfessor, ProfileSelect } from '../pages/index';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +42,11 @@ const router = createBrowserRouter([
         path: "/home-atleta",
         index: true,
         element: <HomeAtleta/>,
+      },
+      {
+        path: "/cadastro-atleta",
+        index: true,
+        element: <CadastroAtleta/>,
       }
     ],
   },
