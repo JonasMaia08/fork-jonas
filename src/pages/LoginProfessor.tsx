@@ -60,7 +60,7 @@ export  const LoginProfessor: React.FC = () => {
                                             type="text"
                                             id="cpf"
                                             placeholder="Preencha com seu CPF"
-                                            {...registerWithMask("cpf",'999.999.99')}
+                                            {...registerWithMask("cpf",'999.999.999-99')}
                                             className="w-full pl-10 pr-3 bg-[#D9D9D9] opacity-70 placeholder-black h-12 p-3 border border-black rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-orange-600 focus:ring-opacity-40"
                                         />
                                         {errors.cpf && (
