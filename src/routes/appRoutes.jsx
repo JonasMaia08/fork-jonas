@@ -8,6 +8,7 @@ import LoginGestor from "../pages/LoginGestor";
 import LoginProfessor from "../pages/LoginProfessor";
 import HomeAtleta from "../pages/HomeAtleta";
 import FaltasAtleta from "../pages/FaltasAtleta";
+import Chamada from "../pages/Chamada";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
         path: '/faltas-atleta',
         index: true,
         element: <FaltasAtleta/>,
+      },
+      {
+        path: '/chamada',
+        index: true,
+        element: <Chamada/>,
       },
     ],
   },
