@@ -38,9 +38,10 @@ const initialStudents: Student[] = [
   },
 ];
 
-const Attendance: React.FC<AttendanceProps> = ({ userType }) => {
+const ChamadaComp: React.FC<AttendanceProps> = ({ userType }) => {
   const [students, setStudents] = useState<Student[]>(initialStudents);
   const [selectedDate, setSelectedDate] = useState<string>("");
+  const [selectedTime, setSelectedTime] = useState<string>("");
 
   const toggleStatus = (studentId: number) => {
     if (userType === "professor") {
@@ -74,7 +75,7 @@ const Attendance: React.FC<AttendanceProps> = ({ userType }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label className="block text-gray-700 mb-1">
-            Selecione a modalidade:
+            Modalidade:
           </label>
           <select className="w-full p-2 border border-black bg-[#d9d9d9] ">
             <option>Selecione a modalidade</option>
@@ -89,7 +90,7 @@ const Attendance: React.FC<AttendanceProps> = ({ userType }) => {
             <option>2024/2</option>
           </select>
         </div>
-        <div className="col-span-2">
+        <div>
           <label className="block text-gray-700 mb-1 ">
             Informe a data da chamada:
           </label>
@@ -97,6 +98,17 @@ const Attendance: React.FC<AttendanceProps> = ({ userType }) => {
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
+            className="w-full p-2 border border-black bg-[#d9d9d9]"
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-1 ">
+            Informe o horário:
+          </label>
+          <input
+            type="time"
+            value={selectedDate}
+            onChange={(e) => setSelectedTime(e.target.value)}
             className="w-full p-2 border border-black bg-[#d9d9d9]"
           />
         </div>
@@ -147,4 +159,4 @@ const Attendance: React.FC<AttendanceProps> = ({ userType }) => {
   );
 };
 
-export default Attendance;
+export default ChamadaComp;
