@@ -15,10 +15,12 @@ interface AttendanceProps {
 }
 
 const initialStudents: Student[] = [
+
   { id: 1, name: "Alessandra Cardoso dos Reis", status: "PRESENTE", absences: 3, modality: "Futebol", semesterYear: "2024/1" },
   { id: 2, name: "Alessandro Cardoso dos Reis", status: "PRESENTE", absences: 4, modality: "Basquete", semesterYear: "2024/2" },
   { id: 3, name: "Alessandre Cardoso dos Reis", status: "PRESENTE", absences: 4, modality: "Futebol", semesterYear: "2024/2" },
   { id: 4, name: "Alessandri Cardoso dos Reis", status: "PRESENTE", absences: 4, modality: "Basquete", semesterYear: "2024/1" },
+
 ];
 
 const ChamadaComp: React.FC<AttendanceProps> = ({ userType }) => {

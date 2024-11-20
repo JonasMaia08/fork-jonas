@@ -52,7 +52,7 @@ const HomeAtleta: React.FC = () => {
 
       <div className="bg-[#d9d9d9] p-4 rounded border border-black shadow-md md:mr-4">
         <h3 className="font-semibold mb-2">FALTAS</h3>
-        <FaltaAtleta subject="Judô" absences={0} maxAbsences={10} />
+        <FaltaAtleta subject="Judô" absences={4} maxAbsences={10} />
       </div>
           </div>
         </div>
