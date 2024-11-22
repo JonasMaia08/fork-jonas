@@ -2,49 +2,62 @@ import React, { useState } from "react";
 import { useForm, FieldValues } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-import { toast } from "react-hot-toast";
-import { userRegisterSchema } from "../lib/schemaLoginUser";
+import { toast, Toaster } from "react-hot-toast";
+import { userSchema } from "../lib/schemaLoginUser";
 import { Loader } from "lucide-react";
 import useNavigateTo from "../hooks/useNavigateTo";
 import HeaderBasic from "../components/ui/HeaderBasic";
-
 import { useHookFormMask } from "use-mask-input";
+
+
+
+const Login = async (cpf: any, password: any) => {
+    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // dados para simulação 
+    
+    if (cpf === "111.111.111-11" && password === "123456") {
+        return true; 
+    }
+    return false;
+};
 
 export const LoginAtleta: React.FC = () => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const GoTo = useNavigateTo();
-
-    const validateLogin = (cpf: string, password: string): boolean => {
-        return cpf === "111.111.111-11" && password === "12345678";
-    };
 
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
     } = useForm({
-        resolver: zodResolver(userRegisterSchema),
+        resolver: zodResolver(userSchema),
     });
 
     const registerWithMask = useHookFormMask(register);
 
     async function onSubmit(data: FieldValues) {
         console.log("Formulário enviado:", data);
-        toast.success("Formulário enviado com sucesso!");
 
+        const { cpf, password } = data;
 
-        const { cpf, password } = data
+        // chamando função de login com dados mockados
+        const loginSuccess = await Login(cpf, password);
 
-        if (validateLogin(cpf, password)) {
+        if (loginSuccess) {
             GoTo("/home-atleta");
-        } 
+
+        } else {
+            toast.error("CPF ou senha inválidos.");
+        }
     }
 
     return (
         <>
+            <Toaster />
             <div className="min-h-screen bg-gray-100 flex flex-col pb-16">
                 <HeaderBasic />
-
                 <main className="flex flex-col items-center flex-1">
                     <div className="flex flex-col m-4 md:mx-20 p-4 md:px-24 py-7 md:py-12 w-full max-w-5xl">
                         <div className="text-start px-8 mb-8">
@@ -84,7 +97,7 @@ export const LoginAtleta: React.FC = () => {
                                     <div className="mb-4">
                                         <label
                                             htmlFor="password"
-                                            className="block text-sm pb-2 font-medium text-gray-600"
+                                            className="block text-sm pb-2 font-medium text-gray -600"
                                         >
                                             Senha
                                         </label>
@@ -133,7 +146,6 @@ export const LoginAtleta: React.FC = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    onClick={onSubmit}
                                     className="h-13 md:w-52 font-bold font-inter bg-orange-600 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300"
                                 >
                                     {isSubmitting ? (
@@ -161,6 +173,4 @@ export const LoginAtleta: React.FC = () => {
             </div>
         </>
     );
-};
-
-
+}

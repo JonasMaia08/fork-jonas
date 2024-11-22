@@ -2,12 +2,23 @@ import React, { useState } from "react";
 import { useForm, FieldValues } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-import { toast } from "react-hot-toast";
-import { userRegisterSchema } from "../lib/schemaLoginUser";
+import { toast, Toaster } from "react-hot-toast";
+import { userSchema } from "../lib/schemaLoginUser";
 import { Loader } from "lucide-react";
 import useNavigateTo from "../hooks/useNavigateTo";
 import HeaderBasic from "../components/ui/HeaderBasic";
-import { useHookFormMask } from "use-mask-input";
+
+const Login = async (email: any, password: any) => {
+    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // dados para simulação 
+    
+    if (email === "joao@gmail.com" && password === "123456") {
+        return true; 
+    }
+    return false;
+};
 
 export const LoginGestor: React.FC = () => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -18,22 +29,34 @@ export const LoginGestor: React.FC = () => {
         handleSubmit,
         formState: { errors, isSubmitting },
     } = useForm({
-        resolver: zodResolver(userRegisterSchema),
+        resolver: zodResolver(userSchema),
     });
-    const registerWithMask = useHookFormMask(register);
+
 
     async function onSubmit(data: FieldValues) {
         console.log("Formulário enviado:", data);
-        toast.success("Formulário enviado com sucesso!");
+
+        const { email, password } = data;
+
+        // chamando função de login com dados mockados
+        const loginSuccess = await Login(email, password);
+
+        if (loginSuccess) {
+            GoTo("/home-gestor");
+
+        } else {
+            toast.error("email ou senha inválidos.");
+        }
     }
+
 
     return (
         <>
+        <Toaster/>
             <div className="min-h-screen bg-gray-100 flex flex-col pb-16">
-                {/* Header */}
+
                 <HeaderBasic/>
 
-                {/* Main Content */}
                 <main className="flex flex-col items-center flex-1">
                     <div className="flex flex-col m-4 md:mx-20 p-4 md:px-24 py-7 md:py-12 w-full max-w-5xl">
                         <div className="text-start px-8 mb-8">
@@ -54,18 +77,18 @@ export const LoginGestor: React.FC = () => {
                                             htmlFor="cpf"
                                             className="block text-sm pb-2 font-medium text-gray-600"
                                         >
-                                            CPF
+                                            Email
                                         </label>
                                         <input
                                             type="text"
-                                            id="cpf"
-                                            placeholder="Preencha com seu CPF"
-                                            {...registerWithMask("cpf",'999.999.999-99')}
+                                            id="email"
+                                            placeholder="Preencha com seu Email"
+                                            {...register("email")}
                                             className="w-full pl-10 pr-3 bg-[#D9D9D9] opacity-70 placeholder-black h-12 p-3 border border-black rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-orange-600 focus:ring-opacity-40"
                                         />
-                                        {errors.cpf && (
+                                        {errors.email && (
                                             <p className="text-xs text-red-400 mt-1">
-                                                {errors.cpf?.message as string}
+                                                {errors.email?.message as string}
                                             </p>
                                         )}
                                     </div>
