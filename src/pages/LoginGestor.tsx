@@ -155,12 +155,7 @@ export const LoginGestor: React.FC = () => {
                                 </button>
                             </div>
                         </form>
-                        <div className="flex flex-col text-center">
-                            <p className="font-inter">Ainda não tem uma conta?</p>
-                            <a href="" className="font-inter text-blue-600">
-                                Criar conta
-                            </a>
-                        </div>
+                        
                     </div>
                 </main>
 

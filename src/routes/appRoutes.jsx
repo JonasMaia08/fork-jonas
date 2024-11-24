@@ -11,6 +11,7 @@ import {
   LoginProfessor,
   LoginGestor,
   ProfileSelect,
+  HomeProfessor
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
         path: "/cadastro-atleta",
         index: true,
         element: <CadastroAtleta />,
+      },
+      {
+        path: "/home-professor",
+        index: true,
+        element: <HomeProfessor />,
       },
     ],
   },
