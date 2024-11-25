@@ -6,7 +6,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { userSchema } from "../lib/schemaLoginUser";
 import { Loader } from "lucide-react";
 import useNavigateTo from "../hooks/useNavigateTo";
-import HeaderBasic from "../components/ui/HeaderBasic";
+import HeaderBasic from "../components/navigation/HeaderBasic";
 
 
 const Login = async (email: any, password: any) => {

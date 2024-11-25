@@ -1,5 +1,5 @@
 import React from "react";
-import AgendaSemanal from "../components/ui/AgendaSemanal";
+import AgendaSemanal from "../components/AgendaSemanal";
 import FaltaAtleta from "../components/FaltaAtleta";
 import FaltaProfessor from "../components/FaltaProfessor";
 import CalendarioCompromissos from "../components/CalendarioCompromissos";

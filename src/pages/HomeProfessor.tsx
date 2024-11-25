@@ -1,17 +1,13 @@
 import React from 'react';
 
-
+import HeaderBasic from "../components/navigation/header-professor"
 
 import Navbar from "../components/navigation/navbar-professor"
 import {
     SidebarInset,
     SidebarProvider,
-    SidebarTrigger,
 } from "../components/ui/sidebar"
 
-import { CustomSidebarTrigger } from '../components/ui/custom-trigger'
-import { Button } from "../components/ui/button"
-import { Menu } from 'lucide-react'
 import useNavigateTo from "../hooks/useNavigateTo";
 
 import { AppSidebar } from '../components/navigation/AppSidebar-prof';
@@ -32,43 +28,10 @@ const HomeProfessor: React.FC = () => {
             <SidebarProvider>
                 <AppSidebar />
                 <SidebarInset>
+
                     <div className="min-h-screen bg-gray-100 ">
 
-                        <nav className="bg-gray-100 py-4 shadow-md bg-white">
-                            <div className="flex items-center justify-between w-full px-4">
-                                <div className="flex items-center space-x-2">
-                                    <CustomSidebarTrigger />
-
-
-                                    <img
-                                        src="https://lh3.googleusercontent.com/proxy/X-B99B9HsP3Lo4ae0nDQMozyMHTcxxdcPINH959IZlOUhqK7j0tdAK-sz09ISiS2c0ew2N4wyhXsHyR5EZ1vqwJKbh0VhZBj7gEfvT4DeFZkKw"
-                                        alt="Logo"
-                                        className="h-10"
-                                    />
-                                </div>
-
-                                <ul className="hidden md:flex flex-1 justify-center space-x-6">
-                                    {navLinks.map((link, index) => (
-                                        <li key={index}>
-                                            <a href={link.href} className="text-gray-700 hover:text-orange-500">
-                                                {link.text}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <button
-                                    onClick={() => GoTo("/profile-select")}
-                                    className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
-                                >
-                                    Entrar
-                                </button>
-                            </div>
-                        </nav>
-
-
-
-
+                        <HeaderBasic />
 
                         <div className="max-w-7xl mx-auto pb-1">
                             {/* Saudação */}
