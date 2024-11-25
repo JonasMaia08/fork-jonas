@@ -28,13 +28,15 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="p-4 flex items-center justify-between">
-          <img
-            src="https://lh3.googleusercontent.com/proxy/X-B99B9HsP3Lo4ae0nDQMozyMHTcxxdcPINH959IZlOUhqK7j0tdAK-sz09ISiS2c0ew2N4wyhXsHyR5EZ1vqwJKbh0VhZBj7gEfvT4DeFZkKw"
-            alt="Logo"
-            className="h-10"
-          />
-          <CustomSidebarTrigger />
+        <div className="flex items-center justify-between w-full px-4">
+          <div className="flex items-center space-x-2">
+            <CustomSidebarTrigger />
+            <img
+              src="https://lh3.googleusercontent.com/proxy/X-B99B9HsP3Lo4ae0nDQMozyMHTcxxdcPINH959IZlOUhqK7j0tdAK-sz09ISiS2c0ew2N4wyhXsHyR5EZ1vqwJKbh0VhZBj7gEfvT4DeFZkKw"
+              alt="Logo"
+              className="h-10"
+            />
+          </div>
         </div>
       </SidebarHeader>
       <SidebarContent>

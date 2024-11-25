@@ -21,6 +21,10 @@ module.exports = {
   			inter: ['Inter', 'sans-serif'],
   			jockey: ['Jockey One', 'sans-serif']
   		},
+		  boxShadow: {
+			'hover-custom': '0 2px 4px', 
+		  },
+		  
   		colors: {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
