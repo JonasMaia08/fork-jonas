@@ -1,8 +1,13 @@
 import React from 'react';
-
 import HeaderBasic from "../components/navigation/header-professor"
-
 import Navbar from "../components/navigation/navbar-professor"
+import { useIsMobile } from "../hooks/use-mobile";
+import { VisualizarAtendimentos, QuantidadeAtendimentos, AtendimentosAnteriores } from "../components/Atendimentos-professor";
+
+
+
+
+
 import {
     SidebarInset,
     SidebarProvider,
@@ -22,84 +27,41 @@ const navLinks = [
 
 const HomeProfessor: React.FC = () => {
     const GoTo = useNavigateTo()
+    const isMobile = useIsMobile();
+
     return (
-        <>
+        <SidebarProvider>
+            <AppSidebar />
+            <SidebarInset>
+                <div className="min-h-screen bg-gray-100">
+                    <HeaderBasic />
 
-            <SidebarProvider>
-                <AppSidebar />
-                <SidebarInset>
+                    <div className="max-w-7xl pb-16 m-14 ">
 
-                    <div className="min-h-screen bg-gray-100 ">
+                        <h1 className="text-2xl font-bold">
+                            Olá, Professor(a) <span className="text-orange-500">Moisés</span>
+                        </h1>
 
-                        <HeaderBasic />
-
-                        <div className="max-w-7xl mx-auto pb-1">
-                            {/* Saudação */}
-                            <h1 className="text-2xl font-bold">
-                                Olá, Professor(a) <span className="text-orange-500">Moisés</span>
-                            </h1>
-
-                            {/* Conteúdo */}
-                            <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
-                                {/* Aulas de Hoje e Amanhã */}
-                                <div>
-                                    <h2 className="text-lg font-semibold">Aulas de Hoje</h2>
-                                    <div className="mt-4 grid grid-cols-2 gap-4">
-                                        <div className="p-4 bg-gray-200 rounded shadow">
-                                            <p>Raspadão</p>
-                                            <p className="text-orange-500">18:30</p>
-                                        </div>
-                                        <div className="p-4 bg-gray-200 rounded shadow"></div>
-                                    </div>
-
-                                    <h2 className="mt-8 text-lg font-semibold">Aulas de Amanhã</h2>
-                                    <div className="mt-4 grid grid-cols-2 gap-4">
-                                        <div className="p-4 bg-gray-200 rounded shadow">
-                                            <p>Mergulho</p>
-                                            <p className="text-orange-500">18:30</p>
-                                        </div>
-                                        <div className="p-4 bg-gray-200 rounded shadow"></div>
-                                    </div>
-                                </div>
-
-                                {/* Atendimentos Anteriores */}
-                                <div>
-                                    <h2 className="text-lg font-semibold">Atendimentos Anteriores</h2>
-                                    <div className="mt-4 flex gap-4">
-                                        <select className="p-2 bg-white border rounded shadow">
-                                            <option>Data</option>
-                                        </select>
-                                        <select className="p-2 bg-white border rounded shadow">
-                                            <option>Local</option>
-                                        </select>
-                                    </div>
-
-                                    <div className="mt-4 bg-gray-200 p-4 rounded shadow">
-                                        <div className="grid grid-cols-3 gap-4 text-gray-600">
-                                            <p>Data</p>
-                                            <p>Local</p>
-                                            <p>Atendimento</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        {isMobile ? (
+                            <div className="mt-8 flex flex-col items-center gap-8">
+                                <VisualizarAtendimentos/>
+                                <QuantidadeAtendimentos/>
+                                <AtendimentosAnteriores/>
                             </div>
-
-                            {/* Quantidade de Atendimentos */}
-                            <div className="mt-8">
-                                <h2 className="text-lg font-semibold">Quantidade de Atendimentos</h2>
-                                <div className="mt-4 p-4 bg-gray-200 rounded shadow flex justify-between items-center">
-                                    <p>
-                                        <span className="font-semibold">Modalidade:</span> Futebol
-                                    </p>
-                                    <p className="text-orange-500 font-bold text-lg">12</p>
+                        ) : (
+                            <div className="mt-8 grid grid-cols-2 gap-8 space-x-10">
+                                <div className="flex flex-col gap-8">
+                                    <VisualizarAtendimentos/>
+                                    <QuantidadeAtendimentos/>
                                 </div>
+                                <AtendimentosAnteriores/>
                             </div>
-                        </div>
-                        <Navbar />
+                        )}
                     </div>
-                </SidebarInset>
-            </SidebarProvider>
-        </>
+                    <Navbar/>
+                </div>
+            </SidebarInset>
+        </SidebarProvider>
     );
 };
 
