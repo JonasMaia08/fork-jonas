@@ -13,15 +13,14 @@ import {
 } from "../ui/sidebar"
 
 const iconItems = [
-  { title: "Home", url: "#", icon: Home },
-  { title: "Inbox", url: "#", icon: Inbox },
-  { title: "Calendar", url: "#", icon: Calendar },
+  { title: "Sair", url: "#", icon: Home },
+  { title: "Calendario", url: "#", icon: Calendar },
 ];
 
 const navLinks = [
-  { href: "#", text: "Modalidades" },
-  { href: "#", text: "Professores" },
-  { href: "#", text: "Galeria" },
+  { href: "#", text: "Home" },
+  { href: "/chamada", text: "Chamada" },
+  { href: "/lista-atletas", text: "Atletas" },
 ];
 
 export function AppSidebar() {
@@ -41,7 +40,7 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Main Menu</SidebarGroupLabel>
+          <SidebarGroupLabel>Menu</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {iconItems.map((item, index) => (
@@ -58,7 +57,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupLabel>Navegação</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {navLinks.map((link, index) => (
