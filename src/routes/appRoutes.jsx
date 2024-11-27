@@ -11,6 +11,7 @@ import {
   LoginProfessor,
   LoginGestor,
   ProfileSelect,
+  AtletasLista,
   HomeProfessor
 } from "../pages";
 
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
         path: "/home-professor",
         index: true,
         element: <HomeProfessor />,
+      },
+      {
+        path: "/lista-atletas",
+        index: true,
+        element: <AtletasLista />,
       },
     ],
   },

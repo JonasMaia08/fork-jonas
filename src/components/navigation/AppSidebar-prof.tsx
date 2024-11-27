@@ -13,7 +13,7 @@ import {
 } from "../ui/sidebar"
 
 const iconItems = [
-  { title: "Sair", url: "#", icon: Home },
+  { title: "Sair", url: "/", icon: Home },
   { title: "Calendario", url: "#", icon: Calendar },
 ];
 
